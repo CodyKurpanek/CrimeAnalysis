@@ -1,11 +1,11 @@
 # Crime Analysis and Predictive Modeling with GIS Integration
 ### The Stranger Dangers
-CODY KURPANEK, ckurp001@ucr.edu
-DEMETREOUS STILLMAN, dstil005@ucr.edu
-BENJAMIN BRAVO, bbrav013@ucr.edu
-GABRIEL RUELAS, gruel007@ucr.edu
-ADHIKAR CHHIBBER, achhi002@ucr.edu
-TANEESHA SHARMA, tshar015@ucr.edu
+Cody Kurpanek, ckurp001@ucr.edu
+Demetreous Stillman, dstil005@ucr.edu
+Benjamin Bravo, bbrav013@ucr.edu
+Gabriel Ruelas, gruel007@ucr.edu
+Adhikar Chhibber, achhi002@ucr.edu
+Taneesha Sharma, tshar015@ucr.edu
 ### BACKGROUND AND MOTIVATION
 Knowing about crime rates in certain areas is important. Personally, one of our group members has had their car stolen
 multiple times. It is helpful to know the crime rates in an area where you live so you can plan ahead accordingly. With
@@ -45,16 +45,15 @@ A Docker Image defines the necessary dependencies, configurations, and environme
 **Create the image from the Dockerfile:**\
 ``` git clone https://github.com/CodyKurpanek/CrimeAnalysis.git ```\
 ``` cd CrimeAnalysis ```\
-```  docker build -t CrimeImage .```\
+```docker build -t CrimeImage .```\
 **Instantiate the Image**\
 ``` docker run -it CrimeImage /bin/bash ```\
 You should see something like  ``` root@c4dc06a9c310:/# ``` showing that you have instantiated and accessed the container.
 ### What's in the environment (Container)?
 The container is based on the latest Ubuntu (Linux) environment. If you type ls, you’ll see the standard Ubuntu file system structure.\
-Within the container, Apache Spark, Apache Hadoop, and Arcgis API for Python are all installed and ready to be used. You can verify the installations with:
-``` pip3 lists | grep arcgis ```\
-``` hdfs --version ```\
-``` /opt/spark/bin/spark-submit --version ```\
+Within the container, Apache Spark, and Arcgis API for Python are installed and ready to be used. You can verify the installations with:\
+``` pip3 list | grep arcgis ```\
+``` spark-submit --version ```
 ### Using the Container
 Once inside the container, you can develop as if you're in a standard Ubuntu shell, with all dependencies ready to use. However, **containers are not persistent**, meaning any changes you make inside the container are lost once it stops.\
 Mounts allow you to save to persistent data in a location outside of the container. Docker allows you to bind mount a directory within the container to a directory on your host machine or to a Docker volume, which stores data independently of any container, can be easily shared across containers, and retains data even after containers are stopped or removed.
@@ -77,10 +76,10 @@ Now, if you exit and re-instantiate the container, you will see that Riverside_C
 Stop current container, then create a new container from the same image.\
 ``` exit ```\
 ``` docker run -it -v CrimeVolume:/mnt CrimeImage /bin/bash ```\
-Check to see if  Riverside_Crime_Reports.csv remains in root and within the mount.
+Check to see if  Riverside_Crime_Reports.csv remains in root and within the mount.\
 ``` ls ```\
 ``` cd /mnt ```\
-``` ls ```\
+``` ls ```
 
 
 
