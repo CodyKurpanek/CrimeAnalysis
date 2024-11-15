@@ -81,6 +81,15 @@ Check to see if  Riverside_Crime_Reports.csv remains in root and within the moun
 ``` cd /mnt ```\
 ``` ls ```
 
+### Opening the container in the vscode environment.
+Download the dev containers extension in vscode\
+After starting your container, you can go to the docker desktop to see your container ids or use docker ps -a in the command line\
+then use cmd/ctrl + shift + p, type in dev containers: attach to running container, and type in your container's id. It will open the environment in a vscode environment.
 
-
-
+### Running the Jupyter Notebook using the container's environment as the kernel, and allowing pyspark in the container.
+``` python -m ipykernel install --user --name container_env --display-name container_env ```\
+``` export PYSPARK_PYTHON=python3 ```\
+``` export PYSPARK_DRIVER_PYTHON=jupyter notebook --allow-root ```\
+``` pyspark ```\
+That should open a jupyter notebook. In the top right corner, change the kernel from Python 3 (ipykernel) to container_env.\
+You now have a notebook that will allow a connection to spark and using the same environment as the container.\
