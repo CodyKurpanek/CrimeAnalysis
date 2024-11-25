@@ -45,9 +45,9 @@ A Docker Image defines the necessary dependencies, configurations, and environme
 **Create the image from the Dockerfile:**\
 ``` git clone https://github.com/CodyKurpanek/CrimeAnalysis.git ```\
 ``` cd CrimeAnalysis ```\
-```docker build -t CrimeImage .```\
+```docker build -t crimeimage .```\
 **Instantiate the Image**\
-``` docker run -it CrimeImage /bin/bash ```\
+``` docker run -it crimeimage /bin/bash ```\
 You should see something like  ``` root@c4dc06a9c310:/# ``` showing that you have instantiated and accessed the container.
 ### What's in the environment (Container)?
 The container is based on the latest Ubuntu (Linux) environment. If you type ls, you’ll see the standard Ubuntu file system structure.\
@@ -62,12 +62,14 @@ Mounts allow you to save to persistent data in a location outside of the contain
 First, exit the current container.\
 ``` exit ```\
 Now, you can start the container again, but with a volume named CrimeVolume, which is mounted to the \mnt directory within the container.\
-``` docker run -it -v CrimeVolume:/mnt CrimeImage /bin/bash ```\
-Lets try downloading our Riverside crime data to the volume.\
+``` docker run -it -v CrimeVolume:/mnt crimeimage /bin/bash ```\
+Lets now download our crime data to the volume.\
 ``` cd /mnt ```\
 ``` curl -o Riverside_Crime_Reports.csv https://riversideca.gov/transparency/data/dataset/csv/27/Crime_Reports ```\
+``` curl -o SF_PD_Incident_Reports.csv https://data.sfgov.org/api/views/wg3w-h783/rows.csv?fourfour=wg3w-h783&cacheBust=1731346267&date=20241111&accessType=DOWNLOAD ```\
+``` curl -o LA_Crime_Data.csv https://data.lacity.org/api/views/2nrs-mtv8/rows.csv?fourfour=2nrs-mtv8&cacheBust=1730298060&date=20241111&accessType=DOWNLOAD ```\
 ``` ls ```\
-Lets also, for demonstration sake, download this same dataset within the root directory, which is not mounted to persistent storage.\
+Lets also, for demonstration sake, download the riverside dataset within the root directory, which is not mounted to persistent storage.\
 ``` cd .. ```\
 ``` curl -o Riverside_Crime_Reports.csv https://riversideca.gov/transparency/data/dataset/csv/27/Crime_Reports ```\
 ``` ls ```\
@@ -75,7 +77,7 @@ Lets also, for demonstration sake, download this same dataset within the root di
 Now, if you exit and re-instantiate the container, you will see that Riverside_Crime_Reports.csv does not exist within the root directory, but you can still see it within /mnt which is once again mounted to our CrimeVolume Volume. The volume holds the data, and can be remounted to our new container or any other container.\
 Stop current container, then create a new container from the same image.\
 ``` exit ```\
-``` docker run -it -v CrimeVolume:/mnt CrimeImage /bin/bash ```\
+``` docker run -it -v CrimeVolume:/mnt crimeimage /bin/bash ```\
 Check to see if  Riverside_Crime_Reports.csv remains in root and within the mount.\
 ``` ls ```\
 ``` cd /mnt ```\
@@ -84,12 +86,14 @@ Check to see if  Riverside_Crime_Reports.csv remains in root and within the moun
 ### Opening the container in the vscode environment.
 Download the dev containers extension in vscode\
 After starting your container, you can go to the docker desktop to see your container ids or use docker ps -a in the command line\
-then use cmd/ctrl + shift + p, type in dev containers: attach to running container, and type in your container's id. It will open the environment in a vscode environment.
+then inside of vscode, use cmd/ctrl + shift + p, then type in `dev containers: attach to running container`, and select your container's id. It will open the container in a vscode environment.
 
 ### Running the Jupyter Notebook using the container's environment as the kernel, and allowing pyspark in the container.
-``` python -m ipykernel install --user --name container_env --display-name container_env ```\
-``` export PYSPARK_PYTHON=python3 ```\
-``` export PYSPARK_DRIVER_PYTHON=jupyter notebook --allow-root ```\
-``` pyspark ```\
-That should open a jupyter notebook. In the top right corner, change the kernel from Python 3 (ipykernel) to container_env.\
-You now have a notebook that will allow a connection to spark and using the same environment as the container.\
+To run Jupyter using the environment within our container, we need to install a new jupyter kernel with wour environment.\
+```python -m ipykernel install --user --name container_env --display-name container_env```\
+Now, we want to use pyspark within a jupyter notebook rather than in the shell, so lets set some environment variables to use pyspark in jupyter.\
+```export PYSPARK_PYTHON=python3```\
+```export PYSPARK_DRIVER_PYTHON=jupyter```\
+```export PYSPARK_DRIVER_PYTHON_OPTS="notebook --allow-root" ```\
+Finally, we can run pyspark which will automatically open in jupyter notebook. You can now open and run any notebook, but make sure to select the kernel we just installed (the option is in the top right corner by default).\
+```pyspark```
