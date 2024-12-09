@@ -96,4 +96,10 @@ Now, we want to use pyspark within a jupyter notebook rather than in the shell, 
 ```export PYSPARK_DRIVER_PYTHON=jupyter```\
 ```export PYSPARK_DRIVER_PYTHON_OPTS="notebook --allow-root" ```\
 Finally, we can run pyspark which will automatically open in jupyter notebook. You can now open and run any notebook, but make sure to select the kernel we just installed (the option is in the top right corner by default).\
-```pyspark```
+```pyspark```\
+Now, run any notebook!
+
+## ArcGIS API Key Setup:
+Use https://ucr.maps.arcgis.com/ to sign in with ucr credentials so you have access to arcgis pro and api development permissions.\
+Then go to content > new item > developer credential > continue > then type in redirect url = urn:ietf:wg:oauth:2.0:oob and url you can use https://localhost. This will create your API key and give its client_id.\
+When running the notebook, if it uses Arcgis, there will be an Authentication section. You should paste your own client id into that cell before running it. There will also be instructions in the markdown above that cell.
