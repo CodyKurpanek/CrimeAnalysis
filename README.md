@@ -1,42 +1,11 @@
-# Crime Analysis and Predictive Modeling with GIS Integration
-### The Stranger Dangers
-Cody Kurpanek, ckurp001@ucr.edu
-Demetreous Stillman, dstil005@ucr.edu
-Benjamin Bravo, bbrav013@ucr.edu
-Gabriel Ruelas, gruel007@ucr.edu
-Adhikar Chhibber, achhi002@ucr.edu
-Taneesha Sharma, tshar015@ucr.edu
-### BACKGROUND AND MOTIVATION
-Knowing about crime rates in certain areas is important. Personally, one of our group members has had their car stolen
-multiple times. It is helpful to know the crime rates in an area where you live so you can plan ahead accordingly. With
-the knowledge of the car theft rate in Riverside, they could have taken precautions like finding a safe space to park,
-planning to get a more secure car, or taking more precautions to secure the car. When planning an area to move to,
-being able to know beforehand about the crime rates in a certain area is helpful.
-We want to allow people to see the crime rates in different areas, and in different metrics since the worries and
-spatial scope that people have differ. Someone who walks home from work alone may be interested in the street thefts
-and assaults of a very specific area. Someone who drives an old usecure car, may be more interested in car thefts and of
-a slightly larger area. Someone planning on where to move may look at a very large area, and will want to see the rate
-of crime in general.
-With such a vast amount of data, we want our users to be able to find metrics that are meaningful to them, and to
-also be able to predict what the crime rates may be in the future in the area they are planning to live in. We can use
-machine learning to make some more meaningful metrics for users and to make predictions about the future.
-### THE DATASET THAT YOU WILL USE
-**Police Report Data** We will be using datasets from multiple police departments from California. These police reports
-have features for the type of crime as well as the time the crime occurred and the location of the crime. We can use the
-location and type of crime to map the data out onto a map. The time, location, and type of the crime can be used with
-Machine Learning to predict future trends in crime
-**Census Data** We will also be using California census data to properly evaluate the dangerousness of an area by the
-density of the population.
-### MAIN OUTCOME
-1. Map out incident report data for users to see. This would require putting past incidents onto a map and allowing
-users to select types of incidents to report.
-2. Use machine learning to predict future trends in incidents that occur, as well as determining advanced metrics
-for the general dangerousness of a location.
-3. Use Census data to create a picture of the dangerousness in respect to population within the visualizations and
-machine learning predictions.
-4. Visualize the location along with the accompanying statistics as well as any other highly correlated features to
-the dangerousness of an area
+# Crime Analysis with GIS Integration
+### Visualize Crime data from Riverside and LA County Police Report Datasets using ArcGIS API for Python.
+![Visualization Functionality](https://docs.google.com/drawings/d/e/2PACX-1vTQP7qDxjqADd2iIDB51Pi00OQzgY_W8I3K5_5Fv0LX_pBPw6bBBNEbOs8stZRlI2xXDGCgZ26i37fr/pub?w=1387&h=901)
+### Project Structure 
 
+![Project Structure](https://docs.google.com/drawings/d/e/2PACX-1vQUAYEuavaQjrS3K8dHD4wYC9c9LBSC9kVm74lU1fRALdMTjXTTsxG1DJT-cJqv1RqtrXGCuhMHr3f0/pub?w=987&h=881)
+
+# Getting Started
 ## Docker Setup and Tutorial
 Docker allows all of our team members can use the same runtime environment across different operating systems, with reduced dependency issues. \
 Download docker desktop from [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
