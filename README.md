@@ -1,5 +1,10 @@
 # Crime Analysis with GIS Integration
+
 ### Visualize Crime data from Riverside and LA County Police Report Datasets using ArcGIS API for Python.
+
+[Riverside Police Report Dataset](https://riversideca.gov/transparency/data/dataset/show/27/Crime_Reports) |
+[LA Police Report Dataset](https://data.lacity.org/Public-Safety/Crime-Data-from-2020-to-Present/2nrs-mtv8/data_preview)
+
 ![Visualization Functionality 1](https://docs.google.com/drawings/d/e/2PACX-1vS3t4cgFG2_t7K4iSGZKZQHUBL38iGCusUR9ib77LsYYJaba5jpnoNmQ9iG_GRiYFxaPAG21i-dyXgD/pub?w=1440&h=936)
 ![Visualization Functionality 2](https://docs.google.com/drawings/d/e/2PACX-1vQnK8zNzBOcf5PGXogqauMcnN59_OJtgo5bdDdc9jcUqPDwTWAGO8Iy25ZR2g1xa8wLbn4h6CJ5JSiv/pub?w=1440&h=936)
 ![Visualization Functionality 3](https://docs.google.com/drawings/d/e/2PACX-1vT5zjUhLpfwChUmAILm-C3G4be7HPf6gfMz_YmETtX9fKNO10cic8-DOATFxwKRWoPtpjH2zW4919SJ/pub?w=1440&h=936)
