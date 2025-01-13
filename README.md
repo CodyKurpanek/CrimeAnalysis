@@ -1,6 +1,10 @@
 # Crime Analysis with GIS Integration
 ### Visualize Crime data from Riverside and LA County Police Report Datasets using ArcGIS API for Python.
-![Visualization Functionality](https://docs.google.com/drawings/d/e/2PACX-1vTQP7qDxjqADd2iIDB51Pi00OQzgY_W8I3K5_5Fv0LX_pBPw6bBBNEbOs8stZRlI2xXDGCgZ26i37fr/pub?w=1387&h=901)
+![Visualization Functionality 1](https://docs.google.com/drawings/d/e/2PACX-1vS3t4cgFG2_t7K4iSGZKZQHUBL38iGCusUR9ib77LsYYJaba5jpnoNmQ9iG_GRiYFxaPAG21i-dyXgD/pub?w=1440&h=936)
+![Visualization Functionality 2](https://docs.google.com/drawings/d/e/2PACX-1vQnK8zNzBOcf5PGXogqauMcnN59_OJtgo5bdDdc9jcUqPDwTWAGO8Iy25ZR2g1xa8wLbn4h6CJ5JSiv/pub?w=1440&h=936)
+![Visualization Functionality 3](https://docs.google.com/drawings/d/e/2PACX-1vT5zjUhLpfwChUmAILm-C3G4be7HPf6gfMz_YmETtX9fKNO10cic8-DOATFxwKRWoPtpjH2zW4919SJ/pub?w=1440&h=936)
+![Visualization Functionality 4](https://docs.google.com/drawings/d/e/2PACX-1vSGlhk7TuADtGHw3RmGEhkR58UMhUb6KH6EJR7Vr0T3ZmCH_S559LJhjJ3LtmKA3H0W-eySKvGNarc-/pub?w=1440&h=936)
+
 ### Project Structure 
 
 ![Project Structure](https://docs.google.com/drawings/d/e/2PACX-1vQUAYEuavaQjrS3K8dHD4wYC9c9LBSC9kVm74lU1fRALdMTjXTTsxG1DJT-cJqv1RqtrXGCuhMHr3f0/pub?w=987&h=881)
